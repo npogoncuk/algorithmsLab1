@@ -1,5 +1,5 @@
 data class Node(
-    val data: Int,
+    var data: Int,
     var left: Node? = null,
     var right: Node? = null
 )
