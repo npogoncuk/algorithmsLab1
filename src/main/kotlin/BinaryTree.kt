@@ -1,8 +1,4 @@
-private const val DEPTH_COEFFICIENT = 10
-
-class BinaryTree {
-    private var root: Node? = null
-
+class BinaryTree : AbstractBinaryTree() {
     fun generateTree(numberOfNodes: Int) {
         var counter = 0
         fun generate(numberOfNodes: Int): Node? {
@@ -13,22 +9,6 @@ class BinaryTree {
             return current
         }
         root = generate(numberOfNodes)
-    }
-
-    fun showTree() {
-        fun show(current: Node?, spaces: Int) {
-            if (current == null) return
-
-            val _spaces = spaces + DEPTH_COEFFICIENT
-
-            show(current.right, _spaces)
-            println()
-            println(" ".repeat(spaces) + current.data)
-            println()
-            show(current.left, _spaces)
-
-        }
-        show(root, 0)
     }
 
     fun showInPrefixOrder() {

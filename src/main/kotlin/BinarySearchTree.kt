@@ -1,7 +1,4 @@
-class BinarySearchTree {
-
-    private var root: Node? = null
-
+class BinarySearchTree : AbstractBinaryTree() {
     private fun searchNode(data: Int): Node? {
         fun searchNode(current: Node?): Node? {
             current ?: return null
@@ -71,19 +68,4 @@ class BinarySearchTree {
         return node.data
     }
 
-    fun showTree() {
-        fun show(current: Node?, spaces: Int) {
-            if (current == null) return
-
-            val _spaces = spaces + 10
-
-            show(current.right, _spaces)
-            println()
-            println(" ".repeat(spaces) + current.data)
-            println()
-            show(current.left, _spaces)
-
-        }
-        show(root, 0)
-    }
 }
